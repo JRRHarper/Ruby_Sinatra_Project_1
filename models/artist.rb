@@ -1,10 +1,10 @@
 require( 'pg' )
-require_relative('../db/sql_runner')
+require_relative('../db/sql_runner.rb')
 
 
 class Artist
 
-  attr_reader( :name, :id )
+  attr_reader :name, :id
 
   def initialize( options )
     @id = options['id']
@@ -51,7 +51,7 @@ class Artist
 
   def self.map_items(sql)
     artist = SqlRunner.run(sql)
-    result = artist.map { |a| Artist.new(artist)}
+    result = artist.map { |artist| Artist.new(artist)}
     return result
   end
 

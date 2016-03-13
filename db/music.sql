@@ -13,7 +13,7 @@ CREATE TABLE Albums (
   artist_id int4 references Artists(id) NOT NULL
 );
 
-CREATE TABLE Stock (
+CREATE TABLE Stocked (
   id serial8 primary key,
   album_id int4 references Albums(id) NOT NULL,
   quantity int2
