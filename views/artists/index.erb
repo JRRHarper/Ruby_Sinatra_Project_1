@@ -1,0 +1,19 @@
+<h2>Artists</h2>
+<h3>Click any artist's name to edit</h3>
+
+<% @artists.each do |artist| %>
+
+  <b>Artist: </b>
+  <p> <a href="/artists/<%= artist.id %>/edit"><%= artist.name %></a></p>
+
+<!--   <form action="/artists/<%= artist.id %>/delete "> <input type="submit" value="Delete Artist"
+  <br> -->
+  <hr>
+
+
+<% end %>
+
+
+<br>
+<br>
+<a href="/">Back</a>

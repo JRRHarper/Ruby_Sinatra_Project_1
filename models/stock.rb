@@ -8,10 +8,10 @@ class Stock
   attr_reader :album_id, :quantity, :id
 
 
-  def initialize( options )
-    @id = options['id']
-    @album_id = options['album_id']
-    @quantity = options['quantity']
+  def initialize( params )
+    @id = params['id']
+    @album_id = params['album_id']
+    @quantity = params['quantity']
   end
 
   def save

@@ -6,10 +6,10 @@ class Album
 
   attr_reader :id, :title, :artist_id
 
-  def initialize( options )
-    @id = options['id']
-    @title = options['title']
-    @artist_id = options['artist_id']
+  def initialize( params )
+    @id = params['id']
+    @title = params['title']
+    @artist_id = params['artist_id']
   end
 
   def save()
@@ -56,7 +56,7 @@ class Album
   end
 
   def self.map_items(sql)
-    album = SqlRunner.run(sql)
+    album = SqlRunner.run_sql(sql)
     result = album.map { |album| Album.new(album)}    
   end
 

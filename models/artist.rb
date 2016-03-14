@@ -6,9 +6,9 @@ class Artist
 
   attr_reader :name, :id
 
-  def initialize( options )
-    @id = options['id']
-    @name = options['name']
+  def initialize( params )
+    @id = params['id']
+    @name = params['name']
   end
 
   def save()
@@ -22,10 +22,9 @@ class Artist
     return Artist.map_item(sql)
   end 
 
-  def update
-    sql = "UPDATE Artists SET name='#{@name}' WHERE id = #{@id}"
+  def self.update(params)
+    sql = "UPDATE Artists SET name='#{params['name']}' WHERE id = #{params['id']}"
     SqlRunner.run_sql(sql)
-    return last_entry()
   end
 
   def self.all
@@ -33,8 +32,8 @@ class Artist
     return Artist.map_items(sql)
   end
 
-  def self.find(id )
-    sql = "SELECT * FROM Artists WHERE id = #{id}"
+  def self.find(id)
+    sql = "SELECT * FROM Artists WHERE id=#{id}"
     result = Artist.map_item(sql)
     return result
   end
@@ -50,8 +49,8 @@ class Artist
   end
 
   def self.map_items(sql)
-    artist = SqlRunner.run(sql)
-    result = artist.map { |artist| Artist.new(artist)}
+    artist = SqlRunner.run_sql(sql)
+    result = artist.map { |a| Artist.new(a)}
     return result
   end
 
