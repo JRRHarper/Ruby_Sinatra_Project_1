@@ -3,23 +3,47 @@
 <form action="/albums/<%= @album.id %>" method="post">
 
   <label for="title">Title:</label>
-  <input type="text" name="title" value="<%= @album.title %>"></input>
+  <input type="text" name="title" value="<%= @album.title %>">
+
+  <br>
+  <br>
 
   <label for="artist_id">Select Artist for Album:</label>
   <select name="artist_id">
-  <% @artists.each do |artist| %>
+    <% @artists.each do |artist| %>
     <% if artist.id == @album.artist_id %>
     <option selected="selected" value="<%= artist.id %> "><%= artist.name %></option>
     <% else %>
     <option value="<%= artist.id %> "><%= artist.name %></option>
     <% end %>
-  <% end %>
+    <% end %>
+  </select>
+  <br>
+  <br>
+
+  <label for="stock_level">Stock Level:</label>
+  <input type="number" name="stock_level" value="<%=@album.stock_level %>">
+
+  <br>
+  <br>
+
+  <label for="buy_price">Buy Price:</label>
+  <input type="number" name="buy_price" value="<%=@album.buy_price %>">
+
+  <br>
+  <br>
+
+  <label for="sell_price">Sell Price:</label>
+  <input type="number" name="sell_price" value="<%=@album.sell_price %>">
+
+  <br>
+  <br>
 
 
   <input type='submit' value="Update album">
 
-  </form>
+</form>
 
-<!--   <form action="/albums/<%= @album.id %>/delete" method="post"> 
+<form action="/albums/<%= @album.id %>/delete" method="post"> 
   <input type="submit" value="Delete Album"></input>
-  </form> -->
+</form>

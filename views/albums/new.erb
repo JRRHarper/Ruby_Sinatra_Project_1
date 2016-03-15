@@ -8,7 +8,7 @@
 <br>
 <br>
 
-<label for="artist_id">By:</label>
+<label for="artist_id">By: </label>
   <select name="artist_id">
     <% @artists.each do |artist| %>
       <option value="<%= artist.id %> "><%= artist.name %></option>
@@ -16,6 +16,24 @@
   </select>
 
 <a href="/artists/new">Artist not listed? Click Here</a>
+
+<br>
+<br>
+
+<label for="stock_level">Stock Level:</label>
+<input type="number" name="stock_level">
+
+<br>
+<br>
+
+<label for="buy_price">Buy Price:</label>
+<input type="number" name="buy_price">
+
+<br>
+<br>
+
+<label for="sell_price">Sell Price:</label>
+<input type="number" name="sell_price">
 
 <br>
 <br>
