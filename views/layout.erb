@@ -2,10 +2,24 @@
 <html>
 <head>
   <title>Keith's Music Shop</title>
+  <link href="https://fonts.googleapis.com/css?family=Fascinate|Vesper+Libre:400,900" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-<h1>Keith's Music Shop</h1>
+<header>
+  <a href="/" id="logo">
+    <h1>Keith's Music Shop</h1>
+  </a>
+<nav>
+  <ul>
+    <li><a href="/">Stock</a></li>
+    <li><a href="/artists">Artists</a></li>
+    <li><a href="/albums">Albums</a></li>
+  </ul>
+</nav>
+
+</header>
+
 <%= yield %>
 
 <br>

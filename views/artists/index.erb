@@ -1,10 +1,10 @@
-<h2>Artists</h2>
-<h3>Click any artist's name to edit</h3>
+<h3>Artists</h3>
+<h4>Click any artist's name to edit</h4>
 
 <% @artists.each do |artist| %>
 
   <b>Artist: </b>
-  <p> <a href="/artists/<%= artist.id %>/edit"><%= artist.name %></a></p>
+  <a href="/artists/<%= artist.id %>/edit"><%= artist.name %></a>
 
   <hr>
 
@@ -12,6 +12,4 @@
 <% end %>
 
 
-<br>
-<br>
-
+<a href="/artists/new">Add a new artist</a>

@@ -1,19 +1,20 @@
-<h2>Albums</h2>
-<h3>Click any album's name to edit</h3>
+<h3>Albums</h3>
+<h4>Click any album's name to edit</h4>
 
 <% @albums.each do |album| %>
+
 
 <b>Album: </b>
 <a href="/albums/<%= album.id %>/edit"><%= album.title  %></a>
 <br>
 <b>Artist: </b> 
 <%= Artist.find(album.artist_id).name %>
+
 <hr>
 
 
+</ul>
+
 <% end %>
 
-
-<br>
-<br>
-
+<a href="/albums/new">Add a new album</a>

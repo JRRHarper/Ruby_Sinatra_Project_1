@@ -1,8 +1,29 @@
-<ul>
-<li><a href="/artists">See the list of artists</a></li>
-<li><a href="/artists/new">Add a new artist</a></li>
-<li><a href="/albums">See the current list of albums</a></li>
-<li><a href="/albums/new">Add a new album</a></li>
-<li><a href="/stocked">Check the current stock levels for all albums</a></li>
+<h3> Homepage </h3>
+
+<% @albums.each do |album| %>
+
+<ul id="album-list">
+<li>
+  <b>Album: </b><%= album.title  %></a>
+</li>
+<br>
+<li>
+  <b>Artist: </b><%= Artist.find(album.artist_id).name %>
+</li>
+<br>
+<li>
+  <b>Stock Level: </b><%= album.stock_level %>
+</li>
+<li>
+  <b>Buy Price: </b>£<%=album.buy_price %>
+</li>
+<li>
+  <b>Sell Price: </b>£<%=album.sell_price %>
+</li>
+<hr>
+
+
 
 </ul>
+
+<% end %>

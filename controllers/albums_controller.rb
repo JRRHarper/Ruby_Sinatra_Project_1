@@ -1,6 +1,7 @@
 require_relative('../models/album.rb')
 require_relative('../models/artist.rb')
 
+
 #index
 get '/albums' do
   @albums = Album.all()
@@ -44,3 +45,4 @@ post '/albums/:id/delete' do
   Album.delete(params[:id])
   redirect to("/albums")
 end
+

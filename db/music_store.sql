@@ -1,4 +1,3 @@
-DROP TABLE Stocked;
 DROP TABLE Albums CASCADE;
 DROP TABLE Artists CASCADE;
 
@@ -15,11 +14,3 @@ CREATE TABLE Albums (
   buy_price int2,
   sell_price int2
 );
-
--- CREATE TABLE Stocked (
---   id serial8 primary key,
---   album_id int4 references Albums(id) NOT NULL,
---   stock int2,
---   buy_price int2,
---   sell_price int2
--- );  
