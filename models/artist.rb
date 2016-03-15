@@ -1,6 +1,6 @@
 require( 'pg' )
 require_relative('../db/sql_runner.rb')
-
+require_relative('./album.rb')
 
 class Artist
 
@@ -18,7 +18,7 @@ class Artist
   end
 
   def last_entry
-    sql = "SELECT * FROM Artists ORDER BY id DESC limit 1;"
+    sql = "SELECT * FROM Artists ORDER BY id DESC limit 1"
     return Artist.map_item(sql)
   end 
 

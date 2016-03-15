@@ -1,4 +1,5 @@
 require_relative('../models/artist.rb')
+require_relative('../models/album.rb')
 
 
 #index

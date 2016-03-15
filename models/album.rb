@@ -1,5 +1,6 @@
 require( 'pg' )
 require_relative('../db/sql_runner.rb')
+require_relative('./artist.rb')
 
 
 class Album
@@ -23,10 +24,9 @@ class Album
     return Album.map_item(sql)
   end
 
-  def update()
-    sql = "UPDATE Albums SET title = '#{@title}', artist_id = #{@artist_id} WHERE id = #{@id}"
+  def self.update(params)
+    sql = "UPDATE Albums SET title = '#{params['title']}', artist_id = #{params['artist_id']} WHERE id = #{params['id']}"
     SqlRunner.run_sql(sql)
-    return last_entry
   end
 
   def self.find(id)
@@ -57,7 +57,8 @@ class Album
 
   def self.map_items(sql)
     album = SqlRunner.run_sql(sql)
-    result = album.map { |album| Album.new(album)}    
+    result = album.map { |al| Album.new(al)}
+    return result     
   end
 
 end

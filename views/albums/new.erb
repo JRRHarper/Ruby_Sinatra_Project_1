@@ -1,0 +1,28 @@
+<h2>Create new Album:</h2>
+
+<form action="/albums" method="post">
+
+  <label for="title">Title: </label>
+  <input type="text" name="title"></input>
+
+<br>
+<br>
+
+<label for="artist_id">By:</label>
+  <select name="artist_id">
+    <% @artists.each do |artist| %>
+      <option value="<%= artist.id %> "><%= artist.name %></option>
+    <% end %>
+  </select>
+
+<a href="/artists/new">Artist not listed? Click Here</a>
+
+<br>
+<br>
+
+<input type='submit' value="Create Album">
+
+<br>
+<br>
+  
+</form>

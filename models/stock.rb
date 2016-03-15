@@ -52,7 +52,7 @@ class Stock
   end
 
   def self.map_items(sql)
-    stock = SqlRunner.run(sql)
+    stock = SqlRunner.run_sql(sql)
     result = stock.map { |s| Stock.new( s ) }
     return result
   end
