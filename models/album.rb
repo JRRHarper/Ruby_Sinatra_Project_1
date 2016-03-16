@@ -10,7 +10,7 @@ class Album
     @id = params['id']
     @title = params['title']
     @artist_id = params['artist_id']
-    @stock_level = params['stock_level']
+    @stock_level = params['stock_level'].to_i
     @buy_price = params['buy_price']
     @sell_price = params['sell_price']
   end
@@ -19,6 +19,16 @@ class Album
     sql = "INSERT INTO Albums (title, artist_id, stock_level, buy_price, sell_price) VALUES ('#{@title}', '#{@artist_id}', #{@stock_level}, #{@buy_price}, #{@sell_price})"
     SqlRunner.run_sql(sql)
     return last_entry
+  end
+
+  def check_stock()
+    if @stock_level >= 10 
+      return "High Stock"
+    elsif @stock_level >= 5 && @stock_level < 10
+      return "Medium Stock"
+    else
+      return "Low Stock"
+    end
   end
 
   def last_entry()

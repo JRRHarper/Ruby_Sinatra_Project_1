@@ -1,4 +1,3 @@
-
 require 'minitest/autorun'
 require 'minitest/rg'
 require_relative '../models/album.rb'
@@ -9,7 +8,7 @@ class TestAlbum < MiniTest::Test
 
   def setup 
     @artist = Artist.new({ 'name' => "Nightwish" })
-    @album = Album.new( 'title' => "Once", 'id' => 1 )
+    @album = Album.new( 'title' => "Once", 'artist_id' => 2, 'stock_level' => 10, 'buy_price' => 5, 'sell_price' => 10, 'id' => 1 )
   end
 
   def test_album_title
@@ -20,6 +19,11 @@ class TestAlbum < MiniTest::Test
   def test_album_id
     result = @album.id
     assert_equal( 1, result )
+  end
+
+  def test_check_stock
+    result = @album.check_stock
+    assert_equal("High Stock", result)
   end
 
 

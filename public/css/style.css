@@ -85,6 +85,10 @@ nav a {
   padding: 0px 10px;
 }
 
+h3 {
+  padding: 0 4%;
+}
+
 
 /*** Colours  ***/
 
@@ -120,5 +124,53 @@ nav a.selected, nav a:hover {
   color: #cc5000;
 }
 
+/*page layout*/
+
+div.music {
+  padding: 0 4%;
+}
 
 
+/*table layout*/
+
+table{
+  border: 1px solid black;
+  width: 90%;
+}
+
+th, td {
+  border: 1px solid black;  
+  padding: 15px;
+}
+
+/*th {
+  background-color: #560e51;
+  color: #cc5000;
+}*/
+
+
+.notfirst:hover{
+  background-color:#bfbabe;
+  color: #f1f2f0;
+
+}
+
+.row-title{
+  width: 40%;
+}
+
+.row-artist {
+width: 25%;
+}
+
+.row-stock {
+  text-align: center;
+}
+
+.row-buy {
+  text-align: center;
+}
+
+.row-sell {
+  text-align: center;
+}

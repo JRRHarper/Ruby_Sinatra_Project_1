@@ -1,29 +1,29 @@
-<h3> Homepage </h3>
+<h3> Current Stock </h3>
 
-<% @albums.each do |album| %>
+<div class="music">
 
-<ul id="album-list">
-<li>
-  <b>Album: </b><%= album.title  %></a>
-</li>
-<br>
-<li>
-  <b>Artist: </b><%= Artist.find(album.artist_id).name %>
-</li>
-<br>
-<li>
-  <b>Stock Level: </b><%= album.stock_level %>
-</li>
-<li>
-  <b>Buy Price: </b>£<%=album.buy_price %>
-</li>
-<li>
-  <b>Sell Price: </b>£<%=album.sell_price %>
-</li>
-<hr>
+<table>
+  <thead>
+    <tr>
+      <th class="row1 row-title">Album Title</th>
+      <th class="row2 row-artist">Artist</th>
+      <th class="row3 row-stock">Current Stock</th>
+      <th class="row4 row-buy">Buy Price</th>
+      <th class="row5 row-sell">Sell Price</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @albums.each do |album| %>
+      <tr class="notfirst">
+        <td class="row1 row-title"><%= album.title %></td>
+        <td class="row2 row-artist"><%= Artist.find(album.artist_id).name %></td> 
+        <td class="row3 row-stock"><%= album.stock_level %> <br> (<%= album.check_stock %>)</td>
+        <td class="row4 row-buy">£<%=album.buy_price %></td>
+        <td class="row5 row-sell">£<%=album.sell_price %></td>
 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-
-</ul>
-
-<% end %>
+</div>
