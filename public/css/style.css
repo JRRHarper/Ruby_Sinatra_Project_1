@@ -135,7 +135,7 @@ div.music {
 
 table{
   border: 1px solid black;
-  width: 90%;
+  width: 95%;
 }
 
 th, td {
@@ -156,11 +156,11 @@ th, td {
 }
 
 .row-title{
-  width: 40%;
+  width: 35%;
 }
 
 .row-artist {
-width: 25%;
+width: 20%;
 }
 
 .row-stock {
@@ -172,5 +172,9 @@ width: 25%;
 }
 
 .row-sell {
+  text-align: center;
+}
+
+.row-markup {
   text-align: center;
 }

@@ -21,10 +21,34 @@ class TestAlbum < MiniTest::Test
     assert_equal( 1, result )
   end
 
+  def test_stock_level
+    result = @album.stock_level
+    assert_equal(10, result)
+  end
+
+  def test_buy_price
+    result = @album.buy_price
+    assert_equal(5, result)
+  end
+
+  def test_sell_price
+    result = @album.sell_price
+    assert_equal(10, result)
+  end
+
   def test_check_stock
     result = @album.check_stock
     assert_equal("High Stock", result)
   end
 
+  def test_markup_value
+    result = @album.markup_value
+    assert_equal(5, result)
+  end
+
+  def test_profit_loss
+    result = @album.profit_loss
+    assert_equal("Profit", result)
+  end
 
 end

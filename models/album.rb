@@ -11,8 +11,8 @@ class Album
     @title = params['title']
     @artist_id = params['artist_id']
     @stock_level = params['stock_level'].to_i
-    @buy_price = params['buy_price']
-    @sell_price = params['sell_price']
+    @buy_price = params['buy_price'].to_i
+    @sell_price = params['sell_price'].to_i
   end
 
   def save()
@@ -28,6 +28,21 @@ class Album
       return "Medium Stock"
     else
       return "Low Stock"
+    end
+  end
+
+  def markup_value
+    result = @sell_price - @buy_price
+    return result
+  end
+
+  def profit_loss
+    if markup_value > 0
+      return "Profit"
+    elsif markup_value < 0
+      return "Loss"
+    else
+      return "Even"
     end
   end
 
