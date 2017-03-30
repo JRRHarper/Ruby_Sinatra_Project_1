@@ -9,7 +9,7 @@ CREATE TABLE Artists (
 CREATE TABLE Albums (
   id serial4 primary key,
   title VARCHAR(255),
-  artist_id int4 references Artists(id) NOT NULL,
+  artist_id int4 references Artists(id) ON DELETE CASCADE,
   stock_level int4,
   buy_price int2,
   sell_price int2
